@@ -38,7 +38,7 @@ class MainActivity : AppCompatActivity() {
             RecognizerIntent.LANGUAGE_MODEL_FREE_FORM
         )
         intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE, Locale.getDefault())
-        intent.putExtra(RecognizerIntent.EXTRA_PROMPT, "Coba kamu ucapkan??")
+        intent.putExtra(RecognizerIntent.EXTRA_PROMPT, "Ada yang bisa dibantu?")
         try {
             voiceRecognitionResult.launch(intent)
 
@@ -71,6 +71,8 @@ class MainActivity : AppCompatActivity() {
                     // Extract product information
                     val productName = productObject.getString("name")
                     val productThumbnail = productObject.getString("thumbnail_image")
+                    val productRating = productObject.getString("rating")
+                    val productSold = productObject.getString("total_product_sold")
                     val productPrice = productObject.getJSONObject("prices").getString("display_amount")
 
                     // Create a layout for each product
@@ -118,6 +120,12 @@ class MainActivity : AppCompatActivity() {
                     productPriceTextView.setTextSize(TypedValue.COMPLEX_UNIT_SP, 14f)
                     productPriceTextView.setTextColor(Color.GRAY)
                     productDetailsLayout.addView(productPriceTextView)
+
+                    val productRatingTextView = TextView(this)
+                    productRatingTextView.text = "★ " + productRating + " | " + productSold
+                    productRatingTextView.setTextSize(TypedValue.COMPLEX_UNIT_SP, 14f)
+                    productRatingTextView.setTextColor(Color.GRAY)
+                    productDetailsLayout.addView(productRatingTextView)
 
                     productLayout.addView(productDetailsLayout)
 

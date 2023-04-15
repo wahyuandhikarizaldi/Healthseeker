@@ -43,7 +43,7 @@
             android:id="@+id/editText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="How can I help you?"
+            android:hint="Ada yang bisa dibantu?"
             android:padding="15dp"
             android:scrollbars="horizontal"
             android:scrollHorizontally="true"

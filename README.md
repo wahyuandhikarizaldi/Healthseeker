@@ -1,3 +1,8 @@
+### Cara kerja
+- Klik mikrofon, ngomong, misalnya "saya pusing dan mual, berikan saya obat terbaik"
+- Hasil voice recognition nya bakal di post ke API server backend, diproses disitu
+- Tar hasilnya ditampilin di list gitu
+
 ### New Progress
 - udah kesambung ke server backend
 - udah bisa sorting dari yang terbaik(rating), sorting yg lain coba tanya backend

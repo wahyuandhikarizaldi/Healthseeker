@@ -1,5 +1,5 @@
 ### New Progress
-- udah kesambung ke backend
+- udah kesambung ke server backend
 - udah bisa sorting dari yang terbaik(rating), sorting yg lain coba tanya backend
 - nampilin list nama obat, harga, rating, sama jumlah pembelian
 - untuk parameter lain, minta backend

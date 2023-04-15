@@ -6,7 +6,9 @@ import com.android.volley.toolbox.StringRequest
 import com.android.volley.Request
 import android.widget.LinearLayout
 import org.json.JSONArray
+import com.android.volley.toolbox.JsonObjectRequest
 import org.json.JSONObject
+
 import android.view.View
 import android.widget.TextView
 import android.graphics.Color
@@ -14,7 +16,6 @@ import android.util.TypedValue
 import com.bumptech.glide.Glide
 import android.view.LayoutInflater
 import android.widget.ImageView
-
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -48,21 +49,29 @@ class MainActivity : AppCompatActivity() {
 
     private fun searchMedicineProducts(searchTerm: String) {
         // Make API call to search for medicine products
-        val apiEndpoint = "https://magneto.api.halodoc.com/api/v1/buy-medicine/products/search/"
-        val requestUrl = apiEndpoint + searchTerm
+        val apiEndpoint = "https://calm-tan-bee-tux.cyclic.app/alodoc"
+
+        // Create the JSON object to send as the body of the request
+        val requestBody = JSONObject().apply {
+            put("text", searchTerm)
+        }
 
         val requestQueue = Volley.newRequestQueue(this)
-        val stringRequest = StringRequest(Request.Method.GET, requestUrl,
+        val jsonObjectRequest = JsonObjectRequest(Request.Method.POST, apiEndpoint, requestBody,
             { response ->
                 // Display the search results in a new container
                 val searchResultsContainer = findViewById<LinearLayout>(R.id.searchResultsContainer)
                 searchResultsContainer.removeAllViews()
 
-                val jsonObject = JSONObject(response)
-                val jsonArray = jsonObject.getJSONArray("result")
+                val jsonArray = response.getJSONArray("result")
 
                 for (i in 0 until jsonArray.length()) {
                     val productObject = jsonArray.getJSONObject(i)
+
+                    // Extract product information
+                    val productName = productObject.getString("name")
+                    val productThumbnail = productObject.getString("thumbnail_image")
+                    val productPrice = productObject.getJSONObject("prices").getString("display_amount")
 
                     // Create a layout for each product
                     val productLayout = LinearLayout(this)
@@ -82,7 +91,7 @@ class MainActivity : AppCompatActivity() {
 
                     // Load image using Glide
                     Glide.with(this)
-                        .load(productObject.getString("image_url"))
+                        .load(productThumbnail)
                         .placeholder(R.drawable.product_placeholder)
                         .error(R.drawable.product_placeholder)
                         .into(productImage)
@@ -98,17 +107,17 @@ class MainActivity : AppCompatActivity() {
                     )
                     productDetailsLayout.setPadding(20, 0, 0, 0)
 
-                    val productName = TextView(this)
-                    productName.text = productObject.getString("name")
-                    productName.setTextSize(TypedValue.COMPLEX_UNIT_SP, 16f)
-                    productName.setTextColor(Color.BLACK)
-                    productDetailsLayout.addView(productName)
+                    val productNameTextView = TextView(this)
+                    productNameTextView.text = productName
+                    productNameTextView.setTextSize(TypedValue.COMPLEX_UNIT_SP, 16f)
+                    productNameTextView.setTextColor(Color.BLACK)
+                    productDetailsLayout.addView(productNameTextView)
 
-                    val productPrice = TextView(this)
-                    productPrice.text = "Rp ${productObject.getInt("min_price")}"
-                    productPrice.setTextSize(TypedValue.COMPLEX_UNIT_SP, 14f)
-                    productPrice.setTextColor(Color.GRAY)
-                    productDetailsLayout.addView(productPrice)
+                    val productPriceTextView = TextView(this)
+                    productPriceTextView.text = productPrice
+                    productPriceTextView.setTextSize(TypedValue.COMPLEX_UNIT_SP, 14f)
+                    productPriceTextView.setTextColor(Color.GRAY)
+                    productDetailsLayout.addView(productPriceTextView)
 
                     productLayout.addView(productDetailsLayout)
 
@@ -117,12 +126,14 @@ class MainActivity : AppCompatActivity() {
                 }
 
             },
+
             { error ->
                 Toast.makeText(this, "Error: ${error.message}", Toast.LENGTH_SHORT).show()
+                requestQueue.stop() // Stop the request queue after the request is completed
             })
-
-        requestQueue.add(stringRequest)
+        requestQueue.add(jsonObjectRequest) // Add the request to the request queue
     }
+
 
     private val voiceRecognitionResult =
         registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->

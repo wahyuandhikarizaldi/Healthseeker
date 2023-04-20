@@ -8,7 +8,7 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:layout_width="500dp"
+        android:layout_width="match_parent"
         android:layout_height="105dp"
         android:background="#038f52"
         android:ems="5"
@@ -21,6 +21,7 @@
         android:layout_marginLeft="20dp"
         android:layout_marginTop="30dp"
         android:layout_marginRight="20dp"
+        android:layout_centerHorizontal="true"
         android:background="#ffffff"
         android:ems="5"
         android:gravity="center"
@@ -33,7 +34,7 @@
 
         <EditText
             android:id="@+id/editText"
-            android:layout_width="374dp"
+            android:layout_width="match_parent"
             android:layout_height="100dp"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="135dp"
@@ -48,11 +49,13 @@
 
     <ScrollView
         android:id="@+id/scrollView"
-        android:layout_width="372dp"
-        android:layout_height="440dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="260dp"
         android:layout_marginRight="20dp"
+        android:layout_marginBottom="135dp"
+
         android:fillViewport="true">
 
         <LinearLayout
@@ -68,8 +71,8 @@
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="116dp"
-        android:layout_marginTop="730dp"
+        android:layout_height="105dp"
+        android:layout_alignParentBottom="true"
         android:background="#038f52"
         android:ems="5"
         android:gravity="center"/>
@@ -79,7 +82,8 @@
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="755dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="20dp"
         android:clickable="true"
         android:focusable="true"
         android:background="@drawable/rounded_bg2"

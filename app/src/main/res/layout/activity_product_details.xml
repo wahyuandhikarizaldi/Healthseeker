@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#ffffff"
@@ -18,9 +18,9 @@
         android:id="@+id/productImageView"
         android:layout_width="200dp"
         android:layout_height="200dp"
-        android:layout_marginTop="5dp"
         android:scaleType="fitCenter"
-        android:layout_gravity="center_horizontal"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/toolbar"
         android:src="@drawable/product_placeholder"
         android:contentDescription="@string/product_image_content_description" />
 
@@ -28,6 +28,7 @@
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="#d7d9d7"
+        android:layout_below="@id/productImageView"
         android:layout_gravity="center_horizontal"/>
 
 
@@ -35,18 +36,19 @@
         android:id="@+id/productPriceTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@id/productImageView"
         android:padding="16dp"
         android:textSize="24sp"
         android:textColor="#000000"
-        android:textStyle="bold"
-        android:layout_marginTop="-5dp"/>
+        android:textStyle="bold"/>
 
     <TextView
         android:id="@+id/productNameTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@id/productPriceTextView"
         android:padding="16dp"
-        android:textSize="16sp"
+        android:textSize="18sp"
         android:textColor="#000000"
         android:layout_marginTop="-30dp"/>
 
@@ -54,6 +56,7 @@
         android:id="@+id/productRatingTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@id/productNameTextView"
         android:padding="16dp"
         android:textSize="16sp"
         android:textColor="#000000"
@@ -61,8 +64,10 @@
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="450dp"
         android:layout_marginTop="20dp"
+        android:layout_alignParentBottom="true"
+        android:layout_below="@id/productRatingTextView"
         android:background="#038f52"
         android:ems="5"
         android:gravity="center" />
@@ -72,9 +77,10 @@
         android:layout_width="160dp"
         android:layout_height="45dp"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="-475dp"
         android:layout_marginRight="20dp"
-        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="-2dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/productRatingTextView"
         android:background="@drawable/rounded_bg4"
         android:ems="5"
         android:gravity="center"
@@ -83,27 +89,41 @@
         android:textSize="16sp"
         android:textColor="#000000"/>
 
-    <TextView
-        android:id="@+id/DescTextView"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="290dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_gravity="center_horizontal"
-        android:ems="5"
-        android:padding="10dp"
-        android:text="LoremIpsumLoremIpsumLoremIpsumLoremIpsumLoremIpsumLoremIpsumLoremIpsumLoremIpsumLoremIpsumLoremIpsumLoremIpsumLoremIpsumLoremIpsumLoremIpsumLoremIpsumLoremIpsumLoremIpsumLoremIpsumLoremIpsumLoremIpsumLoremIpsumLoremIpsumLoremIpsumLoremIpsumLoremIpsumLoremIpsumLoremIpsumLoremIpsumLoremIpsumLoremIpsum"
-        android:textSize="16sp"
-        android:textColor="#ffffff"/>
+        android:layout_height="match_parent"
+        android:layout_below="@id/myTextView"
+        android:layout_above="@id/LinkTextView"
+        android:layout_marginBottom="20dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/DescTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:ems="5"
+                android:padding="10dp"
+                android:text="LoremIpsumLoremIpsumLoremIpsumLoremIpsumLoremIpsumLoremIpsumLoremIpsumLoremIpsumLoremIpsumLoremIpsumLoremIpsumLoremIpsumLoremIpsumLoremIpsumLoremIpsumLoremIpsumLoremIpsumLoremIpsumLoremIpsumLoremIpsumLoremIpsumLoremIpsumLoremIpsumLoremIpsumLoremIpsumLoremIpsumLoremIpsumLoremIpsumLoremIpsumLoremIpsumLoremIpsumLoremIpsumLoremIpsumLoremIpsumLoremIpsumLoremIpsumLoremIpsumLoremIpsumLoremIpsumLoremIpsumLoremIpsumLoremIpsumLoremIpsumLoremIpsumLoremIpsumLoremIpsumLoremIpsumLoremIpsumLoremIpsumLoremIpsumLoremIpsumLoremIpsumLoremIpsumLoremIpsumLoremIpsumLoremIpsumLoremIpsumLoremIpsum"
+                android:textSize="16sp"
+                android:textColor="#ffffff"/>
+
+        </LinearLayout>
+    </ScrollView>
 
     <TextView
         android:id="@+id/LinkTextView"
         android:layout_width="240dp"
         android:layout_height="55dp"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginRight="20dp"
+        android:layout_marginBottom="50dp"
+        android:layout_gravity="center"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
         android:background="@drawable/rounded_bg4"
         android:ems="5"
         android:gravity="center"
@@ -113,4 +133,4 @@
         android:textSize="24sp"
         android:textStyle="bold" />
 
-</LinearLayout>
+</RelativeLayout>

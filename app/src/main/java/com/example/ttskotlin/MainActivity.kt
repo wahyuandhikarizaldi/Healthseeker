@@ -1,14 +1,13 @@
 package com.example.ttskotlin
 
 import android.content.Intent
-import com.android.volley.toolbox.Volley;
+import com.android.volley.toolbox.Volley
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.Request
 import android.widget.LinearLayout
 import org.json.JSONArray
 import com.android.volley.toolbox.JsonObjectRequest
 import org.json.JSONObject
-
 import android.view.View
 import android.widget.TextView
 import android.graphics.Color
@@ -128,6 +127,17 @@ class MainActivity : AppCompatActivity() {
                     productDetailsLayout.addView(productRatingTextView)
 
                     productLayout.addView(productDetailsLayout)
+
+                    // Add OnClickListener to product layout
+                    productLayout.setOnClickListener {
+                        val intent = Intent(this, ProductDetailsActivity::class.java)
+                        intent.putExtra("productName", productName)
+                        intent.putExtra("productThumbnail", productThumbnail)
+                        intent.putExtra("productPrice", productPrice)
+                        intent.putExtra("productRating", productRating)
+                        intent.putExtra("productSold", productSold)
+                        startActivity(intent)
+                    }
 
                     searchResultsContainer.visibility = View.VISIBLE
                     searchResultsContainer.addView(productLayout)

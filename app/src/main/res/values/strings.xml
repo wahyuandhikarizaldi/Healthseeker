@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Health Seeker</string>
+    <string name="product_image_content_description">Product Image</string>
+
 </resources>

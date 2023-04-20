@@ -3,14 +3,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="#dfdfdf"
+    android:background="#ffffff"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
     <TextView
         android:layout_width="500dp"
         android:layout_height="105dp"
-        android:background="@drawable/rounded_bg"
+        android:background="#038f52"
         android:ems="5"
         android:gravity="center" />
 
@@ -21,7 +21,7 @@
         android:layout_marginLeft="20dp"
         android:layout_marginTop="30dp"
         android:layout_marginRight="20dp"
-        android:background="@drawable/rounded_bg2"
+        android:background="#ffffff"
         android:ems="5"
         android:gravity="center"
         android:padding="10dp"
@@ -31,35 +31,27 @@
         android:textStyle="bold" />
 
 
-    <ScrollView
-        android:layout_width="374dp"
-        android:layout_height="55dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="135dp"
-        android:layout_marginRight="20dp"
-        android:background="@drawable/background_edit">
-
         <EditText
             android:id="@+id/editText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="374dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="135dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/background_edit"
             android:hint="Ada yang bisa dibantu?"
+            android:gravity="top|left"
             android:padding="15dp"
-            android:scrollbars="horizontal"
-            android:scrollHorizontally="true"
-            android:singleLine="true"
             android:textColor="@android:color/black"
             android:textColorHint="@android:color/black" />
-
-    </ScrollView>
 
 
     <ScrollView
         android:id="@+id/scrollView"
         android:layout_width="372dp"
-        android:layout_height="515dp"
+        android:layout_height="440dp"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="220dp"
+        android:layout_marginTop="260dp"
         android:layout_marginRight="20dp"
         android:fillViewport="true">
 
@@ -67,10 +59,8 @@
             android:id="@+id/searchResultsContainer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#efefef"
+            android:background="@drawable/rounded_bg4"
             android:orientation="vertical"
-            android:strokeWidth="2"
-            android:strokeColor="#000000"
             android:visibility="gone" />
 
     </ScrollView>
@@ -80,7 +70,7 @@
         android:layout_width="match_parent"
         android:layout_height="116dp"
         android:layout_marginTop="730dp"
-        android:background="@drawable/rounded_bg"
+        android:background="#038f52"
         android:ems="5"
         android:gravity="center"/>
 

@@ -14,4 +14,4 @@
 
 ### What's next?
 - UI/UX (?)
-- Nunggu endpoint tiap proudk dr backend, utk deskripsi produknya
+- Nunggu endpoint tiap produk dr backend, utk deskripsi produknya

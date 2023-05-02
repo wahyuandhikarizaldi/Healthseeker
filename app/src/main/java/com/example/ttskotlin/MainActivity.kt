@@ -62,7 +62,9 @@ class MainActivity : AppCompatActivity() {
                 val searchResultsContainer = findViewById<LinearLayout>(R.id.searchResultsContainer)
                 searchResultsContainer.removeAllViews()
 
-                val jsonArray = response.getJSONArray("result")
+                val jsonObjectResult = response.getJSONObject("result")
+                val jsonArray = jsonObjectResult.getJSONArray("products")
+
 
                 for (i in 0 until jsonArray.length()) {
                     val productObject = jsonArray.getJSONObject(i)
@@ -73,6 +75,7 @@ class MainActivity : AppCompatActivity() {
                     val productRating = productObject.getString("rating")
                     val productSold = productObject.getString("total_product_sold")
                     val productPrice = productObject.getJSONObject("prices").getString("display_amount")
+                    val productLink = productObject.getString("link")
 
                     // Create a layout for each product
                     val productLayout = LinearLayout(this)
@@ -136,6 +139,7 @@ class MainActivity : AppCompatActivity() {
                         intent.putExtra("productPrice", productPrice)
                         intent.putExtra("productRating", productRating)
                         intent.putExtra("productSold", productSold)
+                        intent.putExtra("productLink", productLink)
                         startActivity(intent)
                     }
 

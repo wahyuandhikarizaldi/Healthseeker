@@ -109,7 +109,7 @@
                 android:layout_marginRight="20dp"
                 android:ems="5"
                 android:padding="10dp"
-                android:text="LoremIpsumLoremIpsumLoremIpsumLoremIpsumLoremIpsumLoremIpsumLoremIpsumLoremIpsumLoremIpsumLoremIpsumLoremIpsumLoremIpsumLoremIpsumLoremIpsumLoremIpsumLoremIpsumLoremIpsumLoremIpsumLoremIpsumLoremIpsumLoremIpsumLoremIpsumLoremIpsumLoremIpsumLoremIpsumLoremIpsumLoremIpsumLoremIpsumLoremIpsumLoremIpsumLoremIpsumLoremIpsumLoremIpsumLoremIpsumLoremIpsumLoremIpsumLoremIpsumLoremIpsumLoremIpsumLoremIpsumLoremIpsumLoremIpsumLoremIpsumLoremIpsumLoremIpsumLoremIpsumLoremIpsumLoremIpsumLoremIpsumLoremIpsumLoremIpsumLoremIpsumLoremIpsumLoremIpsumLoremIpsumLoremIpsumLoremIpsumLoremIpsum"
+                android:text="TES"
                 android:textSize="16sp"
                 android:textColor="#ffffff"/>
 
@@ -118,6 +118,7 @@
 
     <TextView
         android:id="@+id/LinkTextView"
+        android:autoLink="web"
         android:layout_width="240dp"
         android:layout_height="55dp"
         android:layout_marginBottom="50dp"

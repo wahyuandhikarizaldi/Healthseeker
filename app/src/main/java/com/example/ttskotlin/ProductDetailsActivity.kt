@@ -25,6 +25,8 @@ import android.widget.Toast
 import java.util.*
 import android.view.MenuItem
 import androidx.appcompat.widget.Toolbar
+import android.net.Uri
+
 
 
 
@@ -36,12 +38,15 @@ class ProductDetailsActivity : AppCompatActivity() {
         const val EXTRA_PRODUCT_PRICE = "productPrice"
         const val EXTRA_PRODUCT_RATING = "productRating"
         const val EXTRA_PRODUCT_SOLD = "productSold"
+        const val EXTRA_PRODUCT_LINK = "productLink"
     }
 
     private lateinit var productNameTextView: TextView
     private lateinit var productImageView: ImageView
     private lateinit var productPriceTextView: TextView
     private lateinit var productRatingTextView: TextView
+    private lateinit var DescTextView: TextView
+    private lateinit var LinkTextView: TextView
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
@@ -70,17 +75,22 @@ class ProductDetailsActivity : AppCompatActivity() {
         val productPrice = intent.getStringExtra(EXTRA_PRODUCT_PRICE)
         val productRating = intent.getStringExtra(EXTRA_PRODUCT_RATING)
         val productSold = intent.getStringExtra(EXTRA_PRODUCT_SOLD)
+        val productDesc = intent.getStringExtra(EXTRA_PRODUCT_LINK)
+        val productLink = intent.getStringExtra(EXTRA_PRODUCT_LINK)
 
         // Initialize UI elements
         productNameTextView = findViewById(R.id.productNameTextView)
         productImageView = findViewById(R.id.productImageView)
         productPriceTextView = findViewById(R.id.productPriceTextView)
         productRatingTextView = findViewById(R.id.productRatingTextView)
+        DescTextView = findViewById(R.id.DescTextView)
+        LinkTextView = findViewById(R.id.LinkTextView)
 
         // Set product name to text view
         productNameTextView.text = productName
         productPriceTextView.text = productPrice
         productRatingTextView.text = "★ " + productRating + " | " + productSold
+        DescTextView.text = productDesc
 
         // Load product image using Glide
         Glide.with(this)
@@ -88,5 +98,17 @@ class ProductDetailsActivity : AppCompatActivity() {
             .placeholder(R.drawable.product_placeholder)
             .error(R.drawable.product_placeholder)
             .into(productImageView)
+
+        // Add OnClickListener to the DescTextView
+        DescTextView.setOnClickListener {
+            val openLinkIntent = Intent(Intent.ACTION_VIEW, Uri.parse(productDesc))
+            startActivity(openLinkIntent)
+        }
+
+        // Add OnClickListener to the LinkTextView
+        LinkTextView.setOnClickListener {
+            val openLinkIntent = Intent(Intent.ACTION_VIEW, Uri.parse(productLink))
+            startActivity(openLinkIntent)
+        }
     }
 }

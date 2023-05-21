@@ -12,7 +12,8 @@
 - untuk parameter lain, minta backend
 - Udah bisa nampilin page tiap produk
 - Udah bisa klik direct link produk
+- Udah ada fitur bookmark
 
 ### What's next?
-- Deskripsi (?)
+- Deskripsi Obat (?)
 - Tamat (?)

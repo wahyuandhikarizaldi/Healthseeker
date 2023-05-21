@@ -11,7 +11,8 @@
 - nampilin list nama obat, harga, rating, sama jumlah pembelian
 - untuk parameter lain, minta backend
 - Udah bisa nampilin page tiap produk
+- Udah bisa klik direct link produk
 
 ### What's next?
-- UI/UX (?)
-- Nunggu endpoint tiap produk dr backend, utk deskripsi produknya
+- Deskripsi (?)
+- Tamat (?)

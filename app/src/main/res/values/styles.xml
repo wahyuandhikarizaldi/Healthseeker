@@ -1,8 +1,14 @@
 <resources>
+
     <style name="ToolbarTitleFontStyle" parent="@android:style/TextAppearance">
         <item name="android:fontFamily">@font/poppins_light</item>
         <item name="android:textColor">#FFFFFF</item>
         <item name="android:textSize">19sp</item>
         <item name="android:textStyle">bold</item>
     </style>
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:windowBackground">@android:color/white</item>
+    </style>
+
 </resources>

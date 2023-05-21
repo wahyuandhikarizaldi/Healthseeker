@@ -35,6 +35,9 @@ import android.content.SharedPreferences
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import android.util.Log
+import android.view.Menu
+import android.widget.PopupMenu
+import android.view.ViewGroup
 
 
 import java.util.*
@@ -264,14 +267,36 @@ class MainActivity : AppCompatActivity() {
         }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when (item.itemId) {
-            android.R.id.home -> {
-                // Handle the bookmark icon click event here
-                startActivity(Intent(this, BookmarksActivity::class.java))
-                return true
+        return when (item.itemId) {
+            R.id.menu_item_dropdown -> {
+                val anchorView = findViewById<View>(R.id.menu_item_dropdown)
+
+                val popupMenu = PopupMenu(this, anchorView)
+                popupMenu.menuInflater.inflate(R.menu.dropdown_menu, popupMenu.menu)
+                popupMenu.setOnMenuItemClickListener { menuItem ->
+                    when (menuItem.itemId) {
+                        R.id.menu_item_1 -> {
+                            startActivity(Intent(this, BookmarksActivity::class.java))
+                            true
+                        }
+                        R.id.menu_item_2 -> {
+                            startActivity(Intent(this, AboutActivity::class.java))
+                            true
+                        }
+                        else -> false
+                    }
+                }
+                popupMenu.show()
+                true
             }
-            else -> return super.onOptionsItemSelected(item)
+            else -> super.onOptionsItemSelected(item)
         }
+    }
+
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu, menu)
+        return true
     }
 
     private fun loadBookmarks(): ArrayList<BookmarkedProduct> {
@@ -348,11 +373,6 @@ class MainActivity : AppCompatActivity() {
         val toolbar = findViewById<Toolbar>(R.id.toolbar1)
         toolbar.title = ""
         setSupportActionBar(toolbar)
-        val bookmarkIcon = ContextCompat.getDrawable(this, R.drawable.baseline_bookmarks_24)
-        if (bookmarkIcon != null) {
-            supportActionBar?.setDisplayHomeAsUpEnabled(true)
-            supportActionBar?.setHomeAsUpIndicator(bookmarkIcon)
-        }
 
         // Initialize the SharedPreferences object
         sharedPreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)

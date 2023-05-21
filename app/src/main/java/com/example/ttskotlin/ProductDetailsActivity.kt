@@ -27,9 +27,6 @@ import android.view.MenuItem
 import androidx.appcompat.widget.Toolbar
 import android.net.Uri
 
-
-
-
 class ProductDetailsActivity : AppCompatActivity() {
 
     companion object {
@@ -63,7 +60,9 @@ class ProductDetailsActivity : AppCompatActivity() {
         setContentView(R.layout.activity_product_details)
 
         // Set the toolbar as the action bar for the activity
-        val toolbar = findViewById<Toolbar>(R.id.toolbar)
+        val toolbar = findViewById<Toolbar>(R.id.toolbar2)
+        toolbar.title = ""
+
         setSupportActionBar(toolbar)
 
         // Add a back button to the toolbar
@@ -98,12 +97,6 @@ class ProductDetailsActivity : AppCompatActivity() {
             .placeholder(R.drawable.product_placeholder)
             .error(R.drawable.product_placeholder)
             .into(productImageView)
-
-        // Add OnClickListener to the DescTextView
-        DescTextView.setOnClickListener {
-            val openLinkIntent = Intent(Intent.ACTION_VIEW, Uri.parse(productDesc))
-            startActivity(openLinkIntent)
-        }
 
         // Add OnClickListener to the LinkTextView
         LinkTextView.setOnClickListener {

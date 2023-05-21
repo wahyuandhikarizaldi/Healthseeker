@@ -9,42 +9,48 @@
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="105dp"
+        android:layout_height="?attr/actionBarSize"
         android:background="#038f52"
         android:ems="5"
         android:gravity="center" />
 
-    <TextView
-        android:id="@+id/myTextView"
-        android:layout_width="370dp"
-        android:layout_height="50dp"
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar1"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#038F52"
+        android:elevation="4dp"
+        android:theme="?attr/actionBarTheme"
+        >
+
+        <TextView
+            android:id="@+id/toolbar_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="Health Seeker"
+            android:fontFamily="@font/poppins_light"
+            android:textColor="#FFFFFF"
+            android:textSize="19sp"
+            android:textStyle="bold"
+            android:layout_gravity="center" />
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="80dp"
         android:layout_marginRight="20dp"
-        android:layout_centerHorizontal="true"
-        android:background="#ffffff"
-        android:ems="5"
-        android:gravity="center"
-        android:padding="10dp"
-        android:text="Health Seeker"
-        android:textSize="19sp"
-        android:textColor="#000000"
-        android:textStyle="bold" />
-
-
-        <EditText
-            android:id="@+id/editText"
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="135dp"
-            android:layout_marginRight="20dp"
-            android:background="@drawable/background_edit"
-            android:hint="Ada yang bisa dibantu?"
-            android:gravity="top|left"
-            android:padding="15dp"
-            android:textColor="@android:color/black"
-            android:textColorHint="@android:color/black" />
+        android:background="@drawable/background_edit"
+        android:hint="Ada yang bisa dibantu?"
+        android:gravity="top|left"
+        android:padding="15dp"
+        android:textColor="@android:color/black"
+        android:textColorHint="@android:color/black" />
 
 
     <ScrollView
@@ -52,9 +58,9 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="260dp"
+        android:layout_marginTop="205dp"
         android:layout_marginRight="20dp"
-        android:layout_marginBottom="135dp"
+        android:layout_marginBottom="130dp"
 
         android:fillViewport="true">
 
@@ -64,7 +70,10 @@
             android:layout_height="wrap_content"
             android:background="@drawable/rounded_bg4"
             android:orientation="vertical"
-            android:visibility="gone" />
+            android:visibility="gone"
+            >
+
+        </LinearLayout>
 
     </ScrollView>
 

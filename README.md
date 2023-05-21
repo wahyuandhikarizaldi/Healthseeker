@@ -13,6 +13,7 @@
 - Udah bisa nampilin page tiap produk
 - Udah bisa klik direct link produk
 - Udah ada fitur bookmark
+- About Page
 
 ### What's next?
 - Deskripsi Obat (?)

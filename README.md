@@ -7,12 +7,13 @@
 
 ### New Progress
 - udah kesambung ke server backend
-- udah bisa sorting dari yang terbaik(rating), sorting yg lain coba tanya backend
+- udah bisa sorting dari yang terbaik(rating), harga murah, harga mahal
 - nampilin list nama obat, harga, rating, sama jumlah pembelian
 - untuk parameter lain, minta backend
 - Udah bisa nampilin page tiap produk
 - Udah bisa klik direct link produk
 - Udah ada fitur bookmark
+- About Page
 
 ### What's next?
 - Deskripsi Obat (?)

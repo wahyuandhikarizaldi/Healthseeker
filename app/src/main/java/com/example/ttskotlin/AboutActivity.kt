@@ -51,12 +51,5 @@ class AboutActivity : AppCompatActivity() {
         // Add a back button to the toolbar
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
-        val myImageView = findViewById<ImageView>(R.id.my_image_view)
-        val imageUrl = "https://rec-data.kalibrr.com/www.kalibrr.com/logos/GGTQ9WER388Z4G2U8J7VPTBQXWP7Y64Q54EXH895-5daff70d.jpg"
-
-        Glide.with(this)
-            .load(imageUrl)
-            .into(myImageView)
-
     }
 }

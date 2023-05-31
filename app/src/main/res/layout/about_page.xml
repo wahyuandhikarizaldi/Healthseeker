@@ -50,7 +50,8 @@
                 <ImageView
                     android:id="@+id/my_image_view"
                     android:layout_width="120dp"
-                    android:layout_height="120dp" />
+                    android:layout_height="120dp"
+                    android:src="@drawable/iconapp"/>
 
                 <TextView
                     android:id="@+id/my_text_view"

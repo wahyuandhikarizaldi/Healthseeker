@@ -64,7 +64,7 @@ class BookmarksActivity : AppCompatActivity() {
         // Log the value of the bookmarked products list
         Log.d("BookmarksActivity", "The bookmarked products are: $bookmarkedList")
         val bookmarksParentLayout = findViewById<LinearLayout>(R.id.bookmark_item_layout)
-        val emptyTextView = findViewById<TextView>(R.id.empty_text_view)
+        val emptyTextView = findViewById<LinearLayout>(R.id.empty_text_view)
 
         if (bookmarkedList != null && bookmarkedList.isNotEmpty()) {
             for (bookmarkedProduct in bookmarkedList) {

@@ -109,7 +109,6 @@ class MainActivity : AppCompatActivity() {
                         LinearLayout.LayoutParams.WRAP_CONTENT
                     )
                     productLayout.setPadding(20, 20, 20, 20)
-
                     // Add product image to layout
                     val productImage = ImageView(this)
                     productImage.layoutParams = LinearLayout.LayoutParams(
@@ -136,6 +135,7 @@ class MainActivity : AppCompatActivity() {
                     ) // Set weight to 1
 
                     productDetailsLayout.setPadding(20, 0, 0, 0)
+
 
                     val productNameTextView = TextView(this)
                     productNameTextView.text = productName

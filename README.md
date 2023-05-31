@@ -15,6 +15,7 @@
 - Udah ada fitur bookmark
 - About Page
 - Sliding Menu
+- Splash Screen
 
 ### What's next?
 - Deskripsi Obat (?)

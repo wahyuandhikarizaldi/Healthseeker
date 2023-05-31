@@ -38,6 +38,10 @@ import android.util.Log
 import android.view.Menu
 import android.widget.PopupMenu
 import android.view.ViewGroup
+import androidx.drawerlayout.widget.DrawerLayout
+import androidx.core.view.GravityCompat
+import com.google.android.material.navigation.NavigationView
+
 
 
 import java.util.*
@@ -267,35 +271,20 @@ class MainActivity : AppCompatActivity() {
         }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return when (item.itemId) {
-            R.id.menu_item_dropdown -> {
-                val anchorView = findViewById<View>(R.id.menu_item_dropdown)
-
-                val popupMenu = PopupMenu(this, anchorView)
-                popupMenu.menuInflater.inflate(R.menu.dropdown_menu, popupMenu.menu)
-                popupMenu.setOnMenuItemClickListener { menuItem ->
-                    when (menuItem.itemId) {
-                        R.id.menu_item_1 -> {
-                            startActivity(Intent(this, BookmarksActivity::class.java))
-                            true
-                        }
-                        R.id.menu_item_2 -> {
-                            startActivity(Intent(this, AboutActivity::class.java))
-                            true
-                        }
-                        else -> false
-                    }
-                }
-                popupMenu.show()
-                true
+        val drawer = findViewById<DrawerLayout>(R.id.drawer_layout)
+        when (item.itemId) {
+            android.R.id.home -> {
+                // Open drawer when hamburger icon is clicked
+                drawer.openDrawer(GravityCompat.START)
+                return true
             }
-            else -> super.onOptionsItemSelected(item)
         }
+        return super.onOptionsItemSelected(item)
     }
 
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.menu, menu)
+        // No need to inflate menu here
         return true
     }
 
@@ -369,10 +358,29 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        // Set the toolbar as the action bar for the activity
         val toolbar = findViewById<Toolbar>(R.id.toolbar1)
         toolbar.title = ""
         setSupportActionBar(toolbar)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.setHomeAsUpIndicator(R.drawable.baseline_menu_24)
+
+        val navigationView = findViewById<NavigationView>(R.id.nav_view)
+        val drawer = findViewById<DrawerLayout>(R.id.drawer_layout)
+        navigationView.setNavigationItemSelectedListener { menuItem ->
+            when (menuItem.itemId) {
+                R.id.menu_item_1 -> {
+                    startActivity(Intent(this, BookmarksActivity::class.java))
+                    true
+                }
+                R.id.menu_item_2 -> {
+                    startActivity(Intent(this, AboutActivity::class.java))
+                    true
+                }
+                else -> false
+            }
+        }.also { drawer.closeDrawers() } // Close drawer after clicking a menu item
+
+
 
         // Initialize the SharedPreferences object
         sharedPreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)

@@ -14,6 +14,7 @@
 - Udah bisa klik direct link produk
 - Udah ada fitur bookmark
 - About Page
+- Sliding Menu
 
 ### What's next?
 - Deskripsi Obat (?)

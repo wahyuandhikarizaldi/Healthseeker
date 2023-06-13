@@ -98,6 +98,12 @@ class ProductDetailsActivity : AppCompatActivity() {
             .error(R.drawable.product_placeholder)
             .into(productImageView)
 
+        // Add OnClickListener to the DescTextView
+        DescTextView.setOnClickListener {
+            val openLinkIntent = Intent(Intent.ACTION_VIEW, Uri.parse(productLink))
+            startActivity(openLinkIntent)
+        }
+
         // Add OnClickListener to the LinkTextView
         LinkTextView.setOnClickListener {
             val openLinkIntent = Intent(Intent.ACTION_VIEW, Uri.parse(productLink))

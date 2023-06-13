@@ -38,7 +38,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_marginTop="20dp" >
+            android:layout_marginTop="15dp" >
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -70,19 +70,20 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="About"
+                android:text="About Us"
                 android:textColor="#000000"
-                android:textSize="19sp"
+                android:textSize="25sp"
                 android:textStyle="bold"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="5dp"
                 android:layout_marginHorizontal="20dp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Nama saya Wahyu Andhika Rizaldi. Nama saya Wahyu Andhika Rizaldi. Nama saya Wahyu Andhika Rizaldi. Nama saya Wahyu Andhika Rizaldi. Nama saya Wahyu Andhika Rizaldi. Nama saya Wahyu Andhika Rizaldi. Nama saya Wahyu Andhika Rizaldi. Nama saya Wahyu Andhika Rizaldi. Nama saya Wahyu Andhika Rizaldi. "
+                android:layout_marginTop="5dp"
+                android:text="HealthSeeker adalah aplikasi inovatif yang dibangun dengan teknologi AI untuk membantu Anda mencari rekomendasi obat yang tepat. Dengan bantuan kami, Anda dapat memperoleh informasi obat yang akurat dan terpercaya dengan cepat dan mudah."
                 android:textColor="#000000"
-                android:textSize="15sp"
+                android:textSize="17sp"
                 android:layout_marginHorizontal="20dp"
                 android:textAlignment="viewStart"
                 android:justificationMode="inter_word" />
@@ -90,72 +91,25 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="FAQ"
+                android:layout_marginTop="5dp"
+                android:text="Kami memahami betapa pentingnya kepercayaan dalam memilih obat yang sesuai dengan kebutuhan Anda. Oleh karena itu, HealthSeeker menggabungkan kecerdasan buatan dengan data yang terkini dan terverifikasi secara medis, memastikan bahwa rekomendasi obat yang kami berikan adalah yang terbaik untuk Anda."
                 android:textColor="#000000"
-                android:textSize="19sp"
-                android:textStyle="bold"
-                android:layout_marginTop="30dp"
-                android:layout_marginHorizontal="20dp" />
+                android:textSize="17sp"
+                android:layout_marginHorizontal="20dp"
+                android:textAlignment="viewStart"
+                android:justificationMode="inter_word" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Q: Nama kamu siapa?"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="10dp"
+                android:text="Salah satu fitur unggulan dalam HealthSeeker adalah teknologi speak to text yang inovatif. Anda dapat dengan mudah berbicara dengan aplikasi ini dan mengutarakan keluhan atau pertanyaan Anda terkait dengan kondisi kesehatan Anda. HealthSeeker akan mendengarkan dan memberikan jawaban yang relevan serta solusi terbaik untuk Anda."
                 android:textColor="#000000"
-                android:textSize="15sp"
+                android:textSize="17sp"
                 android:layout_marginHorizontal="20dp"
                 android:textAlignment="viewStart"
-                android:justificationMode="inter_word"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="A: Nama saya Wahyu Andhika Rizaldi. Nama saya Wahyu Andhika Rizaldi. "
-                android:textColor="#000000"
-                android:textSize="15sp"
-                android:layout_marginHorizontal="20dp"
-                android:textAlignment="viewStart"
-                android:justificationMode="inter_word"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Q: Nama kamu siapa?"
-                android:textColor="#000000"
-                android:textSize="15sp"
-                android:layout_marginHorizontal="20dp"
-                android:textAlignment="viewStart"
-                android:justificationMode="inter_word"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="A: Nama saya Wahyu Andhika Rizaldi. Nama saya Wahyu Andhika Rizaldi. "
-                android:textColor="#000000"
-                android:textSize="15sp"
-                android:layout_marginHorizontal="20dp"
-                android:textAlignment="viewStart"
-                android:justificationMode="inter_word"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Q: Nama kamu siapa?"
-                android:textColor="#000000"
-                android:textSize="15sp"
-                android:layout_marginHorizontal="20dp"
-                android:textAlignment="viewStart"
-                android:justificationMode="inter_word"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="A: Nama saya Wahyu Andhika Rizaldi. Nama saya Wahyu Andhika Rizaldi. "
-                android:textColor="#000000"
-                android:textSize="15sp"
-                android:layout_marginHorizontal="20dp"
-                android:textAlignment="viewStart"
-                android:justificationMode="inter_word"/>
+                android:justificationMode="inter_word" />
 
         </LinearLayout>
 
